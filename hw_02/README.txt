@@ -1,4 +1,4 @@
-學號：40741001
+學號：407410051
 姓名：洪碩星
 環境：csie0.cs.ccu.edu.tw
 e-mail:shhung@csie.io
