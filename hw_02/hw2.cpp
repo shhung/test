@@ -5,7 +5,7 @@
 
 using namespace std;
 
-_List *insert(_List *head, int n){
+_List *insert(_List *head, int n){//將資料插入linked list的head，並指定為新的head
     _List *tmp = NULL;
     tmp = new _List;
     tmp->num = n;
@@ -14,7 +14,7 @@ _List *insert(_List *head, int n){
     tmp = NULL;
     return head;
 }
-void ReadList(istream &in, _List* &head){
+void ReadList(istream &in, _List* &head){//讀入檔案中的資料，依序存入linked list
     int n;
     in >> n;
     head = insert(head, n);
@@ -23,7 +23,7 @@ void ReadList(istream &in, _List* &head){
         head = insert(head, n);
     }    
 }
-void Avgs (_List *head, _Data* data){
+void Avgs (_List *head, _Data* data){//走訪list，計算總和及個數，求得平均值，存入_Data
     int Num = 0, NumP = 0, NumN = 0;
     float Sum = 0, SumP = 0, SumN = 0;
     _List *tmp = head;
@@ -44,7 +44,7 @@ void Avgs (_List *head, _Data* data){
     data->AveN = SumN/NumN;
     data->AveP = SumP/NumP;
 }
-int Large (_List *head, _Data* data){
+void Large (_List *head, _Data* data){//走訪list，重複比較求得最大值，存入_Data
     _List *tmp = head;
     int max = tmp->num, min = tmp->num;
     while(tmp != NULL){
@@ -59,15 +59,7 @@ int Large (_List *head, _Data* data){
     data->Maximun = max;
     data->Minimum = min;
 }
-void Display (_List *head ,_Data &data){
-    /*
-    _List *tmp = head;
-    while(tmp != NULL){
-        cout << tmp->num << endl;
-        tmp = tmp->next;
-    }
-    tmp = NULL;
-    */
+void Display (_List *head ,_Data &data){//輸出_Data中的資料
     cout << "Ave:" << data.Ave << endl;
     cout << "AveN:" << data.AveN << endl;
     cout << "AveP:" << data.AveP << endl;
